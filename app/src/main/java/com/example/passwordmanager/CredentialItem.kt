@@ -11,6 +11,7 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
+import androidx.compose.ui.unit.sp
 import com.example.passwordmanager.database.Credential
 
 @Composable
@@ -33,14 +34,14 @@ fun CredentialItem(
 
             Text(
                 text = credential.websiteName,
-                style = MaterialTheme.typography.titleLarge,
+                fontSize = 22.sp,
                 color = MaterialTheme.colorScheme.primary
             )
 
 
             Text(
                 text = "User: ${credential.username}",
-                style = MaterialTheme.typography.bodyMedium
+                fontSize = 14.sp,
             )
 
             Spacer(modifier = Modifier.height(8.dp))
@@ -49,15 +50,16 @@ fun CredentialItem(
             Row(verticalAlignment = Alignment.CenterVertically) {
                 Text(
                     text = "Password: ",
-                    style = MaterialTheme.typography.bodyMedium
+                    fontSize = 14.sp,
                 )
 
 
                 Text(
                     text = if (isVisible) credential.password else "••••••••",
                     modifier = Modifier.weight(1f),
-                    style = MaterialTheme.typography.bodyLarge
-                )
+                    fontSize = 16.sp,
+
+                    )
 
 
                 IconButton(onClick = { isVisible = !isVisible }) {
